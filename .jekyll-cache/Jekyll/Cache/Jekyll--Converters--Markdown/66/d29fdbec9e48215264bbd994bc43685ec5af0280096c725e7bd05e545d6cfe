@@ -1,0 +1,20 @@
+I"<h2 id="installing-packages">Installing packages</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(rvest)
+library(dplyr)
+</code></pre></div></div>
+<h2 id="webpage">Webpage</h2>
+<p><img src="/img\posts\web-scraping\imdb_screenshot.png" alt="IMDB page" /></p>
+
+<h2 id="scraping-the-ata">Scraping the ata</h2>
+<p>link = “https://www.imdb.com/search/title/?title_type=feature&amp;num_votes=25000,&amp;genres=adventure&amp;sort=user_rating,desc”
+page = read_html(link)</p>
+
+<p>name = page %&gt;% html_nodes(“.lister-item-header a”) %&gt;% html_text()
+year = page %&gt;% html_nodes(“.text-muted.unbold”) %&gt;% html_text()
+rating = page %&gt;% html_nodes(“.ratings-imdb-rating strong”) %&gt;% html_text()
+synopsis = page %&gt;% html_nodes(“.ratings-bar+ .text-muted”) %&gt;% html_text()</p>
+
+<h2 id="writing-to-a-csv">Writing to a .csv</h2>
+<p>movies = data.frame(name, year, rating, synopsis, stringsAsFactors = FALSE)
+write.csv(movies, “movies.csv”)</p>
+:ET

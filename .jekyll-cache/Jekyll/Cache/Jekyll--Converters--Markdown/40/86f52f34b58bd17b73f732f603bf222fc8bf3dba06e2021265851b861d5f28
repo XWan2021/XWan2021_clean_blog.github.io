@@ -1,0 +1,7 @@
+I"C<h2 id="installing-packages">Installing packages</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>library(rvest)
+library(dplyr)
+</code></pre></div></div>
+<h2 id="webpage">Webpage</h2>
+<p><img src="/img/posts/web-scraping/imdb_screenshot.png" alt="IMDB page" /></p>
+:ET
